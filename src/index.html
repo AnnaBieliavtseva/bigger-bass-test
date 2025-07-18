@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Changa+One&family=Sigmar+One&family=Titan+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Mini Slot Bigger Bass</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="backdrop hidden"><div class="loader hidden"></div></div>
+      <div class="popup-container hidden" id="start-popup">
+        <div class="popup-box">
+          <h2>WOW!</h2>
+          <p class="popup-text">YOU RECEIVED:</p>
+          <h3>3 FREE SPINS</h3>
+
+          <div class="popup-wrapper">
+            <img src="/assets/cross.png" alt="Cross" class="popup-img" />
+            <p class="popup-subtext">Without registration</p>
+          </div>
+          <button id="activate-btn">ACTIVATE</button>
+        </div>
+      </div>
+      <div id="game" class="hidden">
+        <img src="/assets/logo.png" alt="Logo Bigger Bass" class="game-logo" />
+        <img src="/assets/fisherman.png" alt="Fisherman" class="game-hero" />
+      </div>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --font-family: 'Changa One', sans-serif;
+  --main-color-black: #101828;
+  --main-color-white: #ffffff;
+  --transition: 0.3s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  background-color: var(--main-color-white);
+  color: var(--main-color-black);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
