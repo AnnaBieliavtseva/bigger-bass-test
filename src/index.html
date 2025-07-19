@@ -26,12 +26,29 @@
             <img src="/assets/cross.png" alt="Cross" class="popup-img" />
             <p class="popup-subtext">Without registration</p>
           </div>
-          <button id="activate-btn">ACTIVATE</button>
+          <button id="activate-btn" class="activate-btn">
+            <span class="btn-text">ACTIVATE</span>
+          </button>
         </div>
       </div>
-      <div id="game" class="hidden">
+      <div id="game" class="game">
         <img src="/assets/logo.png" alt="Logo Bigger Bass" class="game-logo" />
-        <img src="/assets/fisherman.png" alt="Fisherman" class="game-hero" />
+        <img
+          src="/assets/game/fisherman.png"
+          alt="Fisherman"
+          class="game-hero"
+        />
+        <div class="game-wrapper hidden">
+          <div id="reel" class="reel"></div>
+          <div class="status-bg">
+            <span class="gradient-text">
+              Free Spins: <span id="spinCount">3</span>
+            </span>
+          </div>
+          <button id="spinBtn" class="activate-btn">
+            <span class="btn-text">SPIN</span>
+          </button>
+        </div>
       </div>
     </div>
     <script type="module" src="./js/main.js"></script>

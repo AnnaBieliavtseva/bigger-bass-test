@@ -17,10 +17,8 @@
   padding: 1.5rem;
   border-radius: 12px;
   text-align: center;
-  width: 65vw;
-  max-width: 460px;
+  width: 75vw;
   height: 65vh;
-  aspect-ratio: 700 / 1945;
   animation: fadeInUp 0.4s ease-out;
 }
 
@@ -46,34 +44,35 @@
 }
 
 .popup-box h2 {
-  font-size: 4.5rem;
+  font-size: 4rem;
   color: var(--main-color-white);
-  margin-top: 60px;
+  margin-top: 4rem;
 }
 
 .popup-text {
   font-size: 1.5rem;
   color: var(--main-color-white);
-  margin-top: 5px;
+
 }
 
 .popup-box h3 {
-  font-size: 4rem;
+  font-size: 3.25rem;
   color: #f5ff36;
   line-height: 0.75;
-  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .popup-wrapper {
+  margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .popup-img {
-  margin-left: -12px;
-  width: 100px;
-  height: 86px;
+  margin-left: -0.25rem;
+  width: 6rem;
+  height: 5rem;
   animation: swing 2s ease-in-out infinite;
 }
 
@@ -81,15 +80,15 @@
   color: var(--main-color-white);
   text-align: left;
   line-height: 1.05;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
 }
 
-#activate-btn {
+.activate-btn {
   position: relative;
   display: inline-block;
   width: 200px;
   height: 150px;
-  margin-top: -24px;
+  margin-top: -2.5rem;
   font-family: Sigmar-One, sans-serif;
   padding: 0;
   border: none;
@@ -99,8 +98,8 @@
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 2;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke: #360443;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
