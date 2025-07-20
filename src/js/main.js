@@ -1,4 +1,5 @@
 import { showStartPopup } from './showPopUp';
+import { startGame } from './startGame';
 
 const backdrop = document.querySelector('.backdrop');
 const loader = document.querySelector('.loader');

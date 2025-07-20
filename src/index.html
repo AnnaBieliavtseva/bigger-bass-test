@@ -14,15 +14,16 @@
     <title>Mini Slot Bigger Bass</title>
   </head>
   <body>
-    <div class="container">
+   
       <div class="backdrop hidden"><div class="loader hidden"></div></div>
       <div class="popup-container hidden" id="start-popup">
         <div class="popup-box">
           <h2>WOW!</h2>
           <p class="popup-text">YOU RECEIVED:</p>
-          <h3>3 FREE SPINS</h3>
+          <h3 class="accent-text">3 FREE SPINS</h3>
 
           <div class="popup-wrapper">
+            <div class="cross-thumb"></div>
             <img src="/assets/cross.png" alt="Cross" class="popup-img" />
             <p class="popup-subtext">Without registration</p>
           </div>
@@ -42,7 +43,7 @@
           <div id="reel" class="reel"></div>
           <div class="status-bg">
             <span class="gradient-text">
-              Free Spins: <span id="spinCount">3</span>
+              FREE SPINS: <span id="spinCount">3</span>
             </span>
           </div>
           <button id="spinBtn" class="activate-btn">
@@ -50,7 +51,34 @@
           </button>
         </div>
       </div>
-    </div>
+      <div class="popup-container hidden" id="final-popup">
+        <div class="popup-box">
+          <h2>WELL DONE!</h2>
+          <p class="popup-top-text">YOU WON:</p>
+          <h3>450 GPB</h3>
+          <p class="popup-bottom-text">+250 Free pins</p>
+          <div class="popup-wrapper">
+            <img src="/assets/done.png" alt="Done" class="popup-img" />
+            <p class="popup-subtext final-subtext">
+              Turn on notifications and receive more special bonuses!
+            </p>
+          </div>
+          <button id="activate-btn" class="activate-btn">
+            <span class="btn-text">INSTALL THE APP</span>
+          </button>
+          <div class="timer">
+            <div class="timer__label">Bonus will expire in:</div>
+            <div class="timer__count">
+              <span id="minutes">15</span>:<span id="seconds">00</span>
+            </div>
+            <div class="timer__unit">
+              <div>MINUTES</div>
+              <div>SECONDS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>

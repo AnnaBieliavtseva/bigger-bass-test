@@ -1,3 +1,5 @@
+import { showFinalPopup } from './showPopUp';
+
 const ICONS = {
   bass1: '/assets/icons/bass1.png',
   bass2: '/assets/icons/bass2.png',
@@ -107,12 +109,17 @@ export const startGame = () => {
       spins--;
       step++;
       spinCount.textContent = spins;
-
+      cells.forEach(imgEl => {
+        const cellEl = imgEl.parentElement;
+        if (imgEl.src.endsWith('scatter.png')) {
+          cellEl.classList.add('win');
+        }
+      });
       if (step < combos.length) {
         spinBtn.disabled = false;
       } else {
         cells.forEach(img => img.classList.add('win'));
-        setTimeout(() => showFinalPopup(), 1500);
+        setTimeout(() => showFinalPopup(), 2500);
       }
     }, 700);
   });

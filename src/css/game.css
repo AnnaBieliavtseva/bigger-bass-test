@@ -33,6 +33,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-bottom: 1.5rem;
+  /* overflow: hidden; */
 }
 
 .reel::before {
@@ -40,8 +41,10 @@
   position: absolute;
   inset: -30px;
   background: url('/assets/game/bubbles-canvas.png') no-repeat center/cover;
+
   z-index: 0;
 }
+
 .cell {
   width: 68px;
   height: 68px;
@@ -62,20 +65,18 @@
 }
 
 .status-bg {
-  display: inline-block; 
-  padding: 10px; 
+  display: inline-block;
+  padding: 10px;
   background: url('/assets/game/spin-bg.png') no-repeat center/cover;
   background-size: cover;
   border-radius: 8px;
   margin-bottom: 1rem;
-  margin-top: -10px; 
-  position: relative; 
+  margin-top: -10px;
+  position: relative;
   z-index: 1;
 }
 
-
 .gradient-text {
-  text-transform: uppercase;
   background: linear-gradient(180deg, #dcefff 40%, #c079e9 49%, #f0cdff 75%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -89,6 +90,7 @@
   line-height: 1;
   white-space: nowrap;
 }
+
 
 
 @keyframes reelSpin {
@@ -115,6 +117,22 @@
     transform: scale(1.2);
   }
 }
-.cell.win img {
-  animation: winPulse 0.5s ease-in-out 3;
+
+/* 2) Сияние рамки */
+@keyframes winGlow {
+  0% {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(255, 255, 255, 1);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* Класс, который будем ставить на выигравшие ячейки */
+.cell.win {
+  animation: winPulse 0.6s ease-in-out 3,
+    /* пульс три цикла */ winGlow 0.6s ease-in-out 3; /* синхронный glow */
 }

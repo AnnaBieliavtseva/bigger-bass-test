@@ -20,7 +20,7 @@ body {
   font-family: var(--font-family);
   font-weight: 400;
   background-color: var(--main-color-white);
-  color: var(--main-color-black);
+  color: var(--main-color-white);
 }
 
 h1,
@@ -60,7 +60,7 @@ button {
   display: none;
 }
 
-.activate-btn {
+/* .activate-btn {
   position: relative;
   display: inline-block;
   width: 200px;
@@ -77,7 +77,7 @@ button {
   background: url('/assets/activate-button.png') no-repeat center/contain;
   background-size: contain;
   z-index: 0;
-}
+} */
 
 .btn-text {
   position: relative;

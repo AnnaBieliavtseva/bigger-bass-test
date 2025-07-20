@@ -7,7 +7,7 @@
 
 
 /* Styles for Tablet devices */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px)  and (max-width: 1023px) {
   .container {
     max-width: 768px;
     padding: 24px 60px;
@@ -15,7 +15,7 @@
 }
 
 /* Styles for Desktop devices */
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .container {
     max-width: 1440px;
     padding: 84px 120px;
