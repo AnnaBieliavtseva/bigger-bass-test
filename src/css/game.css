@@ -5,13 +5,15 @@
   padding: 0;
   z-index: 1;
 }
+
 .game-wrapper {
-  margin-top: 160px;
+  margin-top: 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 .game-logo {
   position: fixed;
   top: 24px;
@@ -27,50 +29,60 @@
   width: 280px;
 }
 
+.game-hero-big {
+  display: none;
+}
+
 .reel {
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-bottom: 1.5rem;
-  /* overflow: hidden; */
 }
 
 .reel::before {
   content: '';
   position: absolute;
   inset: -30px;
-  background: url('/assets/game/bubbles-canvas.png') no-repeat center/cover;
-
+  background: url('/assets/game/bubbles-canvas.webp') no-repeat center;
+  background-size: cover;
   z-index: 0;
 }
 
 .cell {
   width: 68px;
-  height: 68px;
+  height: 64px;
   border: 4px solid transparent;
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-
   overflow: hidden;
   background: transparent;
   z-index: 1;
 }
+
 .cell img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
+.reel.spinning .cell {
+  animation: reelSpin 0.7s ease-out;
+}
+
+.cell.win {
+  animation: winPulse 0.6s ease-in-out 3, winGlow 0.6s ease-in-out 3;
+}
+
 .status-bg {
   display: inline-block;
+  text-align: center;
   padding: 10px;
-  background: url('/assets/game/spin-bg.png') no-repeat center/cover;
-  background-size: cover;
+  background: url('/assets/game/spin-bg.webp') no-repeat center/cover;
   border-radius: 8px;
-  margin-bottom: 1rem;
   margin-top: -10px;
   position: relative;
   z-index: 1;
@@ -91,7 +103,7 @@
   white-space: nowrap;
 }
 
-
+/* Animations */
 
 @keyframes reelSpin {
   0% {
@@ -104,9 +116,6 @@
     transform: translateY(0);
   }
 }
-.reel.spinning .cell {
-  animation: reelSpin 0.7s ease-out;
-}
 
 @keyframes winPulse {
   0%,
@@ -118,21 +127,62 @@
   }
 }
 
-/* 2) Сияние рамки */
-@keyframes winGlow {
-  0% {
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+/* Styles for Tablet devices */
+
+@media screen and (min-width: 600px) {
+  .game-hero {
+    width: 350px;
   }
-  50% {
-    box-shadow: 0 0 16px rgba(255, 255, 255, 1);
+  .game-logo {
+    top: 2rem;
+    left: 2rem;
+    width: 200px;
+    height: 180px;
   }
-  100% {
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+
+  .reel::before {
+    inset: -50px;
+    background-size: 500px 460px;
+  }
+
+  .status-bg {
+    width: 250px;
+  }
+
+  .gradient-text {
+    font-size: 2rem;
+  }
+
+  .cell {
+    width: 110px;
+    height: 95px;
+  }
+  .activate-btn.spin {
+    margin-top: -1.5rem;
   }
 }
 
-/* Класс, который будем ставить на выигравшие ячейки */
-.cell.win {
-  animation: winPulse 0.6s ease-in-out 3,
-    /* пульс три цикла */ winGlow 0.6s ease-in-out 3; /* синхронный glow */
+/* Styles for Desktop devices */
+
+@media screen and (min-width: 1024px) {
+  .game-hero {
+    display: none;
+  }
+  .game-hero-big {
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 300px;
+  }
+
+  .reel::before {
+    inset: -200px;
+    background-size: 600px 560px;
+  }
+
+  .cell {
+    width: 130px;
+    height: 120px;
+  }
 }

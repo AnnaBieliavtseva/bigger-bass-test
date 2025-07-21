@@ -83,7 +83,7 @@ export const startGame = () => {
     const cell = document.createElement('div');
     cell.className = 'cell';
     const img = document.createElement('img');
-    img.src = '/assets/icons/placeholder.png';
+    img.src = '/assets/icons/placeholder.jpeg';
     cell.appendChild(img);
     reelEl.appendChild(cell);
   }
@@ -98,8 +98,7 @@ export const startGame = () => {
 
   spinBtn.addEventListener('click', () => {
     if (spins === 0) return;
-    spinBtn.disabled = true;
-    reelEl.classList.add('spinning');
+     reelEl.classList.add('spinning');
 
     setTimeout(() => {
       reelEl.classList.remove('spinning');
@@ -118,8 +117,14 @@ export const startGame = () => {
       if (step < combos.length) {
         spinBtn.disabled = false;
       } else {
+        spinBtn.disabled = true;
+        spinBtn.style.backgroundImage =
+          "url('/assets/game/button-disable.webp')";
         cells.forEach(img => img.classList.add('win'));
-        setTimeout(() => showFinalPopup(), 2500);
+        setTimeout(() => {
+          gameWrapper.classList.add('hidden');
+          showFinalPopup()
+        }, 2500);
       }
     }, 700);
   });

@@ -1,18 +1,19 @@
 import { startGame } from './startGame';
 import { startTimer } from './startTimer';
 
-export const showStartPopup = () => {
-  const popup = document.getElementById('start-popup');
-  popup.classList.remove('hidden');
+const startPopup = document.getElementById('start-popup');
+const finalPopup = document.getElementById('final-popup');
 
-  popup.querySelector('#activate-btn')?.addEventListener('click', () => {
-    popup.classList.add('hidden');
+export const showStartPopup = () => {
+  startPopup.classList.remove('hidden');
+
+  startPopup.querySelector('#activate-btn')?.addEventListener('click', () => {
+    startPopup.classList.add('hidden');
     startGame();
   });
 };
 
 export const showFinalPopup = () => {
-  const popup = document.getElementById('final-popup');
-  popup.classList.remove('hidden');
+  finalPopup.classList.remove('hidden');
   startTimer(15 * 60);
 };
