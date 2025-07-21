@@ -42,9 +42,13 @@ bigger-bass-test/
    npm run dev
    ```
 
-#Деплой
+---
+
+## Деплой
 
 https://bigger-bass-test.vercel.app/
+
+---
 
 ## Автор
 
